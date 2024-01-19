@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\data_type\obj\Debug\data_type.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\data_type\obj\Debug\data_type.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\data_type\bin\Debug\data_type.exe.config
+D:\source_code\C#\C# tutorial\data_type\bin\Debug\data_type.exe
+D:\source_code\C#\C# tutorial\data_type\bin\Debug\data_type.pdb
+D:\source_code\C#\C# tutorial\data_type\obj\Debug\data_type.exe
+D:\source_code\C#\C# tutorial\data_type\obj\Debug\data_type.pdb

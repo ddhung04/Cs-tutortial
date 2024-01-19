@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\Qly_thu_vien\bin\Debug\Qly_thu_vien.exe.config
+D:\source_code\C#\C# tutorial\Qly_thu_vien\bin\Debug\Qly_thu_vien.exe
+D:\source_code\C#\C# tutorial\Qly_thu_vien\bin\Debug\Qly_thu_vien.pdb
+D:\source_code\C#\C# tutorial\Qly_thu_vien\obj\Debug\Qly_thu_vien.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\Qly_thu_vien\obj\Debug\Qly_thu_vien.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\Qly_thu_vien\obj\Debug\Qly_thu_vien.exe
+D:\source_code\C#\C# tutorial\Qly_thu_vien\obj\Debug\Qly_thu_vien.pdb

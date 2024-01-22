@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\SRP\obj\Debug\SRP.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\SRP\obj\Debug\SRP.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\SRP\bin\Debug\SRP.exe.config
+D:\source_code\C#\C# tutorial\SRP\bin\Debug\SRP.exe
+D:\source_code\C#\C# tutorial\SRP\bin\Debug\SRP.pdb
+D:\source_code\C#\C# tutorial\SRP\obj\Debug\SRP.exe
+D:\source_code\C#\C# tutorial\SRP\obj\Debug\SRP.pdb

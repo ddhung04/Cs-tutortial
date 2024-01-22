@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\DaHinh\obj\Debug\DaHinh.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\DaHinh\obj\Debug\DaHinh.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\DaHinh\bin\Debug\DaHinh.exe.config
+D:\source_code\C#\C# tutorial\DaHinh\bin\Debug\DaHinh.exe
+D:\source_code\C#\C# tutorial\DaHinh\bin\Debug\DaHinh.pdb
+D:\source_code\C#\C# tutorial\DaHinh\obj\Debug\DaHinh.exe
+D:\source_code\C#\C# tutorial\DaHinh\obj\Debug\DaHinh.pdb

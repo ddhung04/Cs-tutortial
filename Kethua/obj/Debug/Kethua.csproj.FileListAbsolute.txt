@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\Kethua\bin\Debug\Kethua.exe.config
+D:\source_code\C#\C# tutorial\Kethua\bin\Debug\Kethua.exe
+D:\source_code\C#\C# tutorial\Kethua\bin\Debug\Kethua.pdb
+D:\source_code\C#\C# tutorial\Kethua\obj\Debug\Kethua.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\Kethua\obj\Debug\Kethua.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\Kethua\obj\Debug\Kethua.exe
+D:\source_code\C#\C# tutorial\Kethua\obj\Debug\Kethua.pdb

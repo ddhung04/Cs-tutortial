@@ -11,7 +11,7 @@ namespace Xuly_donhang
         public static readonly List<Order> OrderList = new List<Order>();
         public string NameProduct { get; set; }
         public string Description { get; set; }
-        public int OrderId { get; set; } = 0;
+        public int OrderId { get; set; }
         public int Cost { get; set; }
         public IPaymentMethod PaymentMethods { get; set; }
         public string OrderStatus = "Unpaid";

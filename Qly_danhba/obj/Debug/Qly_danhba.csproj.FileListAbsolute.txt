@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\Qly_danhba\bin\Debug\Qly_danhba.exe.config
+D:\source_code\C#\C# tutorial\Qly_danhba\bin\Debug\Qly_danhba.exe
+D:\source_code\C#\C# tutorial\Qly_danhba\bin\Debug\Qly_danhba.pdb
+D:\source_code\C#\C# tutorial\Qly_danhba\obj\Debug\Qly_danhba.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\Qly_danhba\obj\Debug\Qly_danhba.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\Qly_danhba\obj\Debug\Qly_danhba.exe
+D:\source_code\C#\C# tutorial\Qly_danhba\obj\Debug\Qly_danhba.pdb

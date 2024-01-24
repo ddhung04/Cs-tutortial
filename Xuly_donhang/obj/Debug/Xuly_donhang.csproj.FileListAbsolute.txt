@@ -1,0 +1,7 @@
+D:\source_code\C#\C# tutorial\Xuly_donhang\obj\Debug\Xuly_donhang.csproj.AssemblyReference.cache
+D:\source_code\C#\C# tutorial\Xuly_donhang\obj\Debug\Xuly_donhang.csproj.CoreCompileInputs.cache
+D:\source_code\C#\C# tutorial\Xuly_donhang\bin\Debug\Xuly_donhang.exe.config
+D:\source_code\C#\C# tutorial\Xuly_donhang\bin\Debug\Xuly_donhang.exe
+D:\source_code\C#\C# tutorial\Xuly_donhang\bin\Debug\Xuly_donhang.pdb
+D:\source_code\C#\C# tutorial\Xuly_donhang\obj\Debug\Xuly_donhang.exe
+D:\source_code\C#\C# tutorial\Xuly_donhang\obj\Debug\Xuly_donhang.pdb

@@ -12,17 +12,15 @@ namespace Xuly_donhang
         public string NameProduct { get; set; }
         public string Description { get; set; }
         public int OrderId { get; set; }
-        public int Cost { get; set; }
-        public IPaymentMethod PaymentMethods { get; set; }
+        public IPaymentMethod PaymentMethod { get; set; }
         public string OrderStatus = "Unpaid";
 
-        public Order(string NameProduct, string Description, int OrderId, int Cost, IPaymentMethod PaymentMethod)
+        public Order(string NameProduct, string Description, int OrderId, IPaymentMethod PaymentMethod)
         {
             this.NameProduct = NameProduct;
             this.Description = Description;
             this.OrderId = OrderId;
-            this.Cost = Cost;
-            this.PaymentMethods = PaymentMethod;
+            this.PaymentMethod = PaymentMethod;
             OrderList.Add(this); // lưu vào List ngay khi khởi tạo
         }
 
@@ -30,6 +28,7 @@ namespace Xuly_donhang
         {
             return OrderList;
         }
+
     }
 
     // Các phương thức thanh toán _ có thể mở rộng _
@@ -58,7 +57,7 @@ namespace Xuly_donhang
     {
         public void ProcessOrder(Order order)
         {
-                order.PaymentMethods?.ProcessPayment(order);
+                order.PaymentMethod?.ProcessPayment(order);
                 order.OrderStatus = "Paid";
         }
     }
@@ -68,9 +67,10 @@ namespace Xuly_donhang
         // show ra list order
         static void ShowOrder(List<Order> orderlist)
         {
-            foreach(var order in orderlist)
+            Console.WriteLine($"{"Name",-15} {"Description",-15} {"OrderId",-10} {"PaymentMethod",-20} {"Status",-10}");
+            foreach (var order in orderlist)
             {
-                Console.WriteLine($"Name: {order.NameProduct}, Description: {order.Description}, OrderId: {order.OrderId}, Cost: {order.Cost}, PaymentMethod: {order.PaymentMethods.GetType().Name}, Status: {order.OrderStatus}");
+                Console.WriteLine($"{order.NameProduct,-15} {order.Description,-15} {order.OrderId,-10} {order.PaymentMethod.GetType().Name,-20} {order.OrderStatus,-10}");
             }
         }
 
@@ -83,15 +83,79 @@ namespace Xuly_donhang
 
         static void Main(string[] args)
         {
-            Order myOrder = new Order("IP15", "Fake", 2512, 2000000, new CreditCardPayment());
             List<Order> orderList = Order.GetOrderList();
+            while (true)
+            {
+                Console.WriteLine("-----Menu-----");
+                Console.WriteLine("1. Order");
+                Console.WriteLine("2. Pay");
+                Console.WriteLine("3. ViewOrder");
+                Console.WriteLine("4. Exit");
+                Console.Write("Please Choice (1-4): ");
+                String choice = Console.ReadLine();
 
-            ShowOrder(orderList);
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Name Product: "); string name = Console.ReadLine();
+                        Console.Write("Description: "); string description = Console.ReadLine();
+                        Console.WriteLine("PaymentMethods: 1.<Credit Card> or  2.<PayPal>"); // mở rộng nếu cần 
+                        string x = Console.ReadLine();
+                        Random random = new Random();
+                        int id = random.Next(1, 10000);
 
-            Process(myOrder);
+                        // phương thức thanh toán
+                        Order newOrder;
+                        switch(x) 
+                        {
+                            case "1":
+                                newOrder = new Order(name, description, id, new CreditCardPayment());
+                                break;
+                            case "2":
+                                newOrder = new Order(name, description, id, new PayPalPayment());
+                                break;
+                                // mở rộng nếu cần
+                        }
 
-            ShowOrder(orderList);
+                        Console.WriteLine($"You Order ID: {id}");
+                        Console.WriteLine("Successful Order");
+                        break;
 
+                    case "2":
+                        Console.Write("OrderID: ");
+                        if (int.TryParse(Console.ReadLine(), out int ID))
+                        {
+                            Order orderToPay = orderList.Find(o => o.OrderId == ID);
+                            if (orderToPay != null)
+                            {
+                                Process(orderToPay);
+                                Console.WriteLine("Successful");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Not Found ID");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error");
+                        }
+                        break;
+
+                    case "3":
+                        ShowOrder(orderList);
+                        break;
+
+                    case "4":
+                        Environment.Exit(0);
+                        break;
+
+                    default:
+                        Console.WriteLine("Khong hop le. Vui long chon lai.");
+                        break;
+                }
+                Console.WriteLine();
+            }
             Console.ReadKey();
         }
     }

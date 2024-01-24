@@ -81,7 +81,7 @@ namespace Xuly_donhang
             orderProcessor.ProcessOrder(order);
         }
 
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
             List<Order> orderList = Order.GetOrderList();
             while (true)
@@ -89,7 +89,7 @@ namespace Xuly_donhang
                 Console.WriteLine("-----Menu-----");
                 Console.WriteLine("1. Order");
                 Console.WriteLine("2. Pay");
-                Console.WriteLine("3. ViewOrder");
+                Console.WriteLine("3. ViewOrders");
                 Console.WriteLine("4. Exit");
                 Console.Write("Please Choice (1-4): ");
                 String choice = Console.ReadLine();
@@ -114,7 +114,7 @@ namespace Xuly_donhang
                             case "2":
                                 newOrder = new Order(name, description, id, new PayPalPayment());
                                 break;
-                                // mở rộng nếu cần
+                            // mở rộng nếu cần
                         }
 
                         Console.WriteLine($"You Order ID: {id}");
@@ -156,7 +156,6 @@ namespace Xuly_donhang
                 }
                 Console.WriteLine();
             }
-            Console.ReadKey();
         }
     }
 }

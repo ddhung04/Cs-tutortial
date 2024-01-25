@@ -12,7 +12,7 @@ namespace Xuly_donhang
         public string NameProduct { get; set; }
         public string Description { get; set; }
         public int OrderId { get; set; }
-        public IPaymentMethod PaymentMethod { get; set; }
+        private readonly IPaymentMethod _paymentMethod;
         public string OrderStatus = "Unpaid";
 
         public Order(string NameProduct, string Description, int OrderId, IPaymentMethod PaymentMethod)
@@ -20,13 +20,18 @@ namespace Xuly_donhang
             this.NameProduct = NameProduct;
             this.Description = Description;
             this.OrderId = OrderId;
-            this.PaymentMethod = PaymentMethod;
+            this._paymentMethod = PaymentMethod;
             OrderList.Add(this); // lưu vào List ngay khi khởi tạo
         }
 
         public static List<Order> GetOrderList()
         {
             return OrderList;
+        }
+
+        public IPaymentMethod GetPaymentMethod()
+        {
+            return _paymentMethod;
         }
 
     }
@@ -57,8 +62,9 @@ namespace Xuly_donhang
     {
         public void ProcessOrder(Order order)
         {
-                order.PaymentMethod?.ProcessPayment(order);
-                order.OrderStatus = "Paid";
+            IPaymentMethod PaymentMethod = order.GetPaymentMethod();
+            PaymentMethod.ProcessPayment(order);
+            order.OrderStatus = "Paid";
         }
     }
 
@@ -70,7 +76,8 @@ namespace Xuly_donhang
             Console.WriteLine($"{"Name",-15} {"Description",-15} {"OrderId",-10} {"PaymentMethod",-20} {"Status",-10}");
             foreach (var order in orderlist)
             {
-                Console.WriteLine($"{order.NameProduct,-15} {order.Description,-15} {order.OrderId,-10} {order.PaymentMethod.GetType().Name,-20} {order.OrderStatus,-10}");
+                IPaymentMethod PaymentMethod = order.GetPaymentMethod();
+                Console.WriteLine($"{order.NameProduct,-15} {order.Description,-15} {order.OrderId,-10} {PaymentMethod.GetType().Name,-20} {order.OrderStatus,-10}");
             }
         }
 

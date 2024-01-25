@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+
 
 namespace Qly_thu_vien
 {
@@ -50,12 +52,7 @@ namespace Qly_thu_vien
             Console.Write("Muon Sach: ");
             string name = Console.ReadLine();
 
-            Order newOrder = new Order
-            {
-                ID = Guid.NewGuid(),
-                MSV = MSV,
-                name = name,
-            };
+            Order newOrder = new Order(Guid.NewGuid(), MSV, name);
 
             orders.Add(newOrder);
             Console.WriteLine("ID: " + newOrder.ID);
@@ -102,6 +99,12 @@ namespace Qly_thu_vien
             public Guid ID { get; set; }
             public string MSV { get; set; }
             public string name { get; set; }
+            public Order(Guid iD, string mSV, string name)
+            {
+                this.ID = iD;
+                this.MSV = mSV;
+                this.name = name;
+            }
         }
     }
 }

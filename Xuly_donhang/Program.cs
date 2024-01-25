@@ -1,4 +1,7 @@
-﻿using System;
+﻿// việc chọn phương thức thanh toán của khách hàng chưa ổn 
+// cần thay đổi để hàm main có thể tự cập nhật các phương thức thanh toán mới
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,11 +77,14 @@ namespace Xuly_donhang
         static void ShowOrder(List<Order> orderlist)
         {
             Console.WriteLine($"{"Name",-15} {"Description",-15} {"OrderId",-10} {"PaymentMethod",-20} {"Status",-10}");
-            foreach (var order in orderlist)
+            if (orderlist.Count>0)
             {
-                IPaymentMethod PaymentMethod = order.GetPaymentMethod();
-                Console.WriteLine($"{order.NameProduct,-15} {order.Description,-15} {order.OrderId,-10} {PaymentMethod.GetType().Name,-20} {order.OrderStatus,-10}");
-            }
+                foreach (var order in orderlist)
+                {
+                    IPaymentMethod PaymentMethod = order.GetPaymentMethod();
+                    Console.WriteLine($"{order.NameProduct,-15} {order.Description,-15} {order.OrderId,-10} {PaymentMethod.GetType().Name,-20} {order.OrderStatus,-10}");
+                }
+            } else { Console.WriteLine("-----Empty-----"); }
         }
 
         // xử lý thanh toán đơn hàng
